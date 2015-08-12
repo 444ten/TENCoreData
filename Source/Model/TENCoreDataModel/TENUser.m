@@ -16,4 +16,10 @@
 @dynamic lastName;
 @dynamic car;
 
+- (BOOL)validateForDelete:(NSError **)error {
+    NSLog(@"user: %@ deleted", self.firstName);
+    
+    return YES;
+}
+
 @end

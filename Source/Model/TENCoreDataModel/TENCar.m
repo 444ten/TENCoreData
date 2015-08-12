@@ -15,4 +15,10 @@
 @dynamic model;
 @dynamic user;
 
+- (BOOL)validateForDelete:(NSError **)error {
+    NSLog(@"car: %@ deleted", self.model);
+    
+    return YES;
+}
+
 @end
