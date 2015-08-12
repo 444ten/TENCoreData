@@ -21,6 +21,7 @@ static NSString * const kTENLastName = @"lastName";
 @interface AppDelegate ()
 
 - (void)addUserWithFirstName:(NSString *)firstName lastName:(NSString *)lastName;
+- (void)request;
 
 @end
 
@@ -37,16 +38,7 @@ static NSString * const kTENLastName = @"lastName";
     
 //    [self addUserWithFirstName:@"Sara" lastName:@"Conor"];
     
-// request
-    NSEntityDescription *description = [NSEntityDescription entityForName:TENEnityName inManagedObjectContext:self.managedObjectContext];
-    
-    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:TENEnityName];
-    request.entity = description;
-    request.resultType = NSDictionaryResultType;
-    
-    NSArray *result = [self.managedObjectContext executeFetchRequest:request error:nil];
-    
-    NSLog(@"%@", result);
+    [self request];
     
     return YES;
 }
@@ -88,6 +80,19 @@ static NSString * const kTENLastName = @"lastName";
     }
 }
 
+- (void)request {
+    NSEntityDescription *description = [NSEntityDescription entityForName:TENEnityName inManagedObjectContext:self.managedObjectContext];
+    
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:TENEnityName];
+    request.entity = description;
+    request.resultType = NSDictionaryResultType;
+    
+    NSArray *resultArray = [self.managedObjectContext executeFetchRequest:request error:nil];
+ 
+    for (NSManagedObject *object in resultArray) {
+        NSLog(@"%@ - %@", [object valueForKey:kTENFirstName], [object valueForKey:kTENLastName]);
+    }
+}
 
 #pragma mark -
 #pragma mark Core Data stack
