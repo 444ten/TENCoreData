@@ -11,16 +11,23 @@
 #import "UIWindow+TENExtensions.h"
 #import "UIViewController+TENExtensions.h"
 
-#import "TENFriends.h"
+#import "TENCar.h"
+#import "TENUser.h"
 #import "TENFriendsViewController.h"
 
 
-static NSString * const TENEnityName = @"TENFriends";
+static NSString * const TENEnityUser = @"TENUser";
+static NSString * const TENEnityCar = @"TENCar";
+static NSString * const TENEnityCoreDataObject = @"TENCoreDataObject";
 
 @interface AppDelegate ()
 
-- (void)addUserWithFirstName:(NSString *)firstName lastName:(NSString *)lastName;
-- (void)request;
+- (void)addUserWithFirstName:(NSString *)firstName lastName:(NSString *)lastName carModel:(NSString *)carModel;
+- (void)addUsers;
+
+- (NSArray *)allObjects;
+- (void)printAllObjects;
+- (void)deleteAllObjects;
 
 @end
 
@@ -35,11 +42,13 @@ static NSString * const TENEnityName = @"TENFriends";
     
     [window makeKeyAndVisible];
     
-//    [self addUserWithFirstName:@"Sara" lastName:@"Conor"];
-//    [self addUserWithFirstName:@"John" lastName:@"Doe"];
-    [self addUserWithFirstName:@"Mary" lastName:@"Kay"];
-  
-    [self request];
+    [self deleteAllObjects];
+
+    [self addUsers];
+    
+//    [self deleteAllObjects];
+    
+    [self printAllObjects];
     
     return YES;
 }
@@ -68,11 +77,16 @@ static NSString * const TENEnityName = @"TENFriends";
 #pragma mark -
 #pragma mark Private
 
-- (void)addUserWithFirstName:(NSString *)firstName lastName:(NSString *)lastName {
-    TENFriends *friend = [NSEntityDescription insertNewObjectForEntityForName:TENEnityName inManagedObjectContext:self.managedObjectContext];
+- (void)addUserWithFirstName:(NSString *)firstName lastName:(NSString *)lastName carModel:(NSString *)carModel {
+    TENUser *user = [NSEntityDescription insertNewObjectForEntityForName:TENEnityUser inManagedObjectContext:self.managedObjectContext];
+    TENCar *car = [NSEntityDescription insertNewObjectForEntityForName:TENEnityCar inManagedObjectContext:self.managedObjectContext];
     
-    friend.firstName = firstName;
-    friend.lastName  = lastName;
+    
+    user.firstName = firstName;
+    user.lastName  = lastName;
+    user.car = car;
+
+    car.model = carModel;
     
     NSError *error = nil;
     if (![self.managedObjectContext save:&error]) {
@@ -82,17 +96,43 @@ static NSString * const TENEnityName = @"TENFriends";
     }
 }
 
-- (void)request {
-    NSEntityDescription *description = [NSEntityDescription entityForName:TENEnityName inManagedObjectContext:self.managedObjectContext];
+- (void)addUsers {
+    [self addUserWithFirstName:@"Sara" lastName:@"Conor" carModel:@"Citroen"];
+    [self addUserWithFirstName:@"John" lastName:@"Doe" carModel:@"Jeep"];
+    [self addUserWithFirstName:@"Mary" lastName:@"Kay" carModel:@"Mazda"];
+}
+
+- (NSArray *)allObjects {
+    NSEntityDescription *entityDescription = [NSEntityDescription entityForName:TENEnityCoreDataObject inManagedObjectContext:self.managedObjectContext];
     
-    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:TENEnityName];
-    request.entity = description;
+    NSFetchRequest *request = [NSFetchRequest new];
+    request.entity = entityDescription;
     
-    NSArray *resultArray = [self.managedObjectContext executeFetchRequest:request error:nil];
+    return [self.managedObjectContext executeFetchRequest:request error:nil];
+}
+
+- (void)printAllObjects {
+    NSArray *objects = [self allObjects];
  
-    for (TENFriends *friend in resultArray) {
-        NSLog(@"%@ - %@", friend.firstName, friend.lastName);
+    for (id object in objects) {
+        if ([object isMemberOfClass:[TENUser class]]) {
+            TENUser *user = (TENUser *)object;
+            NSLog(@"user: %@ - %@, car: %@", user.firstName, user.lastName, user.car.model);
+        } else if ([object isMemberOfClass:[TENCar class]]) {
+            TENCar *car = (TENCar *)object;
+            NSLog(@"car: %@, user: %@", car.model, car.user.firstName);
+        }
     }
+}
+
+- (void)deleteAllObjects {
+    NSArray *objects = [self allObjects];
+    
+    for (id object in objects) {
+        [self.managedObjectContext deleteObject:object];
+    }
+
+    [self.managedObjectContext save:nil];
 }
 
 #pragma mark -

@@ -1,10 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="7701" systemVersion="14E46" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
-    <entity name="TENFriends" representedClassName="TENFriends" syncable="YES">
+    <entity name="TENCar" representedClassName="TENCar" parentEntity="TENCoreDataObject" syncable="YES">
+        <attribute name="model" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="TENUser" inverseName="car" inverseEntity="TENUser" syncable="YES"/>
+    </entity>
+    <entity name="TENCoreDataObject" representedClassName="TENCoreDataObject" syncable="YES"/>
+    <entity name="TENUser" representedClassName="TENUser" parentEntity="TENCoreDataObject" syncable="YES">
         <attribute name="firstName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="lastName" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="car" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="TENCar" inverseName="user" inverseEntity="TENCar" syncable="YES"/>
     </entity>
     <elements>
-        <element name="TENFriends" positionX="-63" positionY="-18" width="128" height="73"/>
+        <element name="TENUser" positionX="18" positionY="164" width="128" height="88"/>
+        <element name="TENCar" positionX="313" positionY="179" width="128" height="73"/>
+        <element name="TENCoreDataObject" positionX="162" positionY="29" width="128" height="43"/>
     </elements>
 </model>

@@ -1,5 +1,5 @@
 //
-//  TENFriends.h
+//  TENCoreDataObject.h
 //  TENCoreData
 //
 //  Created by 444ten on 8/12/15.
@@ -9,9 +9,8 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-@interface TENFriends : NSManagedObject
 
-@property (nonatomic, retain) NSString * firstName;
-@property (nonatomic, retain) NSString * lastName;
+@interface TENCoreDataObject : NSManagedObject
+
 
 @end
