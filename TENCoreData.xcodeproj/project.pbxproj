@@ -13,6 +13,7 @@
 		76F8454F1B7B1B7300E79C5C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 76F845491B7B1B7300E79C5C /* Images.xcassets */; };
 		76F845511B7B1B7300E79C5C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 76F8454B1B7B1B7300E79C5C /* main.m */; };
 		76F845521B7B1B7300E79C5C /* TENCoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 76F8454C1B7B1B7300E79C5C /* TENCoreData.xcdatamodeld */; };
+		76F845561B7B1D9B00E79C5C /* UIWindow+TENExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 76F845551B7B1D9B00E79C5C /* UIWindow+TENExtensions.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +38,8 @@
 		76F8454A1B7B1B7300E79C5C /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		76F8454B1B7B1B7300E79C5C /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		76F8454D1B7B1B7300E79C5C /* TENCoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TENCoreData.xcdatamodel; sourceTree = "<group>"; };
+		76F845541B7B1D9B00E79C5C /* UIWindow+TENExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWindow+TENExtensions.h"; sourceTree = "<group>"; };
+		76F845551B7B1D9B00E79C5C /* UIWindow+TENExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWindow+TENExtensions.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +142,7 @@
 		76F845411B7B1A8300E79C5C /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				76F845531B7B1D9B00E79C5C /* UIWindow+TENExtensions */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -160,6 +164,15 @@
 				76F8454C1B7B1B7300E79C5C /* TENCoreData.xcdatamodeld */,
 			);
 			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		76F845531B7B1D9B00E79C5C /* UIWindow+TENExtensions */ = {
+			isa = PBXGroup;
+			children = (
+				76F845541B7B1D9B00E79C5C /* UIWindow+TENExtensions.h */,
+				76F845551B7B1D9B00E79C5C /* UIWindow+TENExtensions.m */,
+			);
+			path = "UIWindow+TENExtensions";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -264,6 +277,7 @@
 				76F845511B7B1B7300E79C5C /* main.m in Sources */,
 				76F845521B7B1B7300E79C5C /* TENCoreData.xcdatamodeld in Sources */,
 				76F845451B7B1ABC00E79C5C /* AppDelegate.m in Sources */,
+				76F845561B7B1D9B00E79C5C /* UIWindow+TENExtensions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
