@@ -9,6 +9,9 @@
 #import "AppDelegate.h"
 
 #import "UIWindow+TENExtensions.h"
+#import "UIViewController+TENExtensions.h"
+
+#import "TENFriendsViewController.h"
 
 @interface AppDelegate ()
 
@@ -20,7 +23,8 @@
     UIWindow *window = [UIWindow window];
     self.window = window;
     
-//    window.rootViewController =
+    TENFriendsViewController *controller = [TENFriendsViewController controller];
+    window.rootViewController = controller;
     
     [window makeKeyAndVisible];
     
