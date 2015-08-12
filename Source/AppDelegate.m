@@ -11,6 +11,7 @@
 #import "UIWindow+TENExtensions.h"
 #import "UIViewController+TENExtensions.h"
 
+#import "TENFriends.h"
 #import "TENFriendsViewController.h"
 
 
@@ -37,7 +38,8 @@ static NSString * const kTENLastName = @"lastName";
     [window makeKeyAndVisible];
     
 //    [self addUserWithFirstName:@"Sara" lastName:@"Conor"];
-    
+    [self addUserWithFirstName:@"John" lastName:@"Doe"];
+  
     [self request];
     
     return YES;
@@ -68,9 +70,10 @@ static NSString * const kTENLastName = @"lastName";
 #pragma mark Private
 
 - (void)addUserWithFirstName:(NSString *)firstName lastName:(NSString *)lastName {
-    NSManagedObject *user = [NSEntityDescription insertNewObjectForEntityForName:TENEnityName inManagedObjectContext:self.managedObjectContext];
-    [user setValue:firstName forKey:kTENFirstName];
-    [user setValue:lastName forKey:kTENLastName];
+    TENFriends *friend = [NSEntityDescription insertNewObjectForEntityForName:TENEnityName inManagedObjectContext:self.managedObjectContext];
+    
+    friend.firstName = firstName;
+    friend.lastName  = lastName;
     
     NSError *error = nil;
     if (![self.managedObjectContext save:&error]) {
@@ -85,12 +88,11 @@ static NSString * const kTENLastName = @"lastName";
     
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:TENEnityName];
     request.entity = description;
-    request.resultType = NSDictionaryResultType;
     
     NSArray *resultArray = [self.managedObjectContext executeFetchRequest:request error:nil];
  
-    for (NSManagedObject *object in resultArray) {
-        NSLog(@"%@ - %@", [object valueForKey:kTENFirstName], [object valueForKey:kTENLastName]);
+    for (TENFriends *friend in resultArray) {
+        NSLog(@"%@ - %@", friend.firstName, friend.lastName);
     }
 }
 

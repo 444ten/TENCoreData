@@ -18,6 +18,7 @@
 		76F8455F1B7B219300E79C5C /* TENFriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 76F8455D1B7B219300E79C5C /* TENFriendsViewController.m */; };
 		76F845601B7B219300E79C5C /* TENFriendsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76F8455E1B7B219300E79C5C /* TENFriendsViewController.xib */; };
 		76F845641B7B21D400E79C5C /* UIViewController+TENExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 76F845631B7B21D400E79C5C /* UIViewController+TENExtensions.m */; };
+		76F845691B7B3B2300E79C5C /* TENFriends.m in Sources */ = {isa = PBXBuildFile; fileRef = 76F845681B7B3B2300E79C5C /* TENFriends.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,8 @@
 		76F8455E1B7B219300E79C5C /* TENFriendsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TENFriendsViewController.xib; sourceTree = "<group>"; };
 		76F845621B7B21D400E79C5C /* UIViewController+TENExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+TENExtensions.h"; sourceTree = "<group>"; };
 		76F845631B7B21D400E79C5C /* UIViewController+TENExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+TENExtensions.m"; sourceTree = "<group>"; };
+		76F845671B7B3B2300E79C5C /* TENFriends.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TENFriends.h; sourceTree = "<group>"; };
+		76F845681B7B3B2300E79C5C /* TENFriends.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TENFriends.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +128,7 @@
 		76F8453E1B7B1A0500E79C5C /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				76F845651B7B3AEF00E79C5C /* Model */,
 				76F8453F1B7B1A7B00E79C5C /* GUI */,
 				76F845461B7B1B7300E79C5C /* SupportingFiles */,
 				76F845401B7B1A8300E79C5C /* Libraries */,
@@ -215,6 +219,23 @@
 				76F845631B7B21D400E79C5C /* UIViewController+TENExtensions.m */,
 			);
 			path = "UIViewController+TENExtensions";
+			sourceTree = "<group>";
+		};
+		76F845651B7B3AEF00E79C5C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				76F845661B7B3B0E00E79C5C /* TENCoreDataModel */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		76F845661B7B3B0E00E79C5C /* TENCoreDataModel */ = {
+			isa = PBXGroup;
+			children = (
+				76F845671B7B3B2300E79C5C /* TENFriends.h */,
+				76F845681B7B3B2300E79C5C /* TENFriends.m */,
+			);
+			path = TENCoreDataModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -318,6 +339,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				76F845511B7B1B7300E79C5C /* main.m in Sources */,
+				76F845691B7B3B2300E79C5C /* TENFriends.m in Sources */,
 				76F845521B7B1B7300E79C5C /* TENCoreData.xcdatamodeld in Sources */,
 				76F845641B7B21D400E79C5C /* UIViewController+TENExtensions.m in Sources */,
 				76F8455B1B7B217900E79C5C /* TENViewController.m in Sources */,
