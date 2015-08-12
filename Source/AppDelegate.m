@@ -16,8 +16,6 @@
 
 
 static NSString * const TENEnityName = @"TENFriends";
-static NSString * const kTENFirstName = @"firstName";
-static NSString * const kTENLastName = @"lastName";
 
 @interface AppDelegate ()
 
@@ -38,7 +36,8 @@ static NSString * const kTENLastName = @"lastName";
     [window makeKeyAndVisible];
     
 //    [self addUserWithFirstName:@"Sara" lastName:@"Conor"];
-    [self addUserWithFirstName:@"John" lastName:@"Doe"];
+//    [self addUserWithFirstName:@"John" lastName:@"Doe"];
+    [self addUserWithFirstName:@"Mary" lastName:@"Kay"];
   
     [self request];
     
