@@ -13,7 +13,14 @@
 
 #import "TENFriendsViewController.h"
 
+
+static NSString * const TENEnityName = @"TENFriends";
+static NSString * const kTENFirstName = @"firstName";
+static NSString * const kTENLastName = @"lastName";
+
 @interface AppDelegate ()
+
+- (void)addUserWithFirstName:(NSString *)firstName lastName:(NSString *)lastName;
 
 @end
 
@@ -27,6 +34,19 @@
     window.rootViewController = controller;
     
     [window makeKeyAndVisible];
+    
+//    [self addUserWithFirstName:@"Sara" lastName:@"Conor"];
+    
+// request
+    NSEntityDescription *description = [NSEntityDescription entityForName:TENEnityName inManagedObjectContext:self.managedObjectContext];
+    
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:TENEnityName];
+    request.entity = description;
+    request.resultType = NSDictionaryResultType;
+    
+    NSArray *result = [self.managedObjectContext executeFetchRequest:request error:nil];
+    
+    NSLog(@"%@", result);
     
     return YES;
 }
@@ -51,6 +71,23 @@
 
     [self saveContext];
 }
+
+#pragma mark -
+#pragma mark Private
+
+- (void)addUserWithFirstName:(NSString *)firstName lastName:(NSString *)lastName {
+    NSManagedObject *user = [NSEntityDescription insertNewObjectForEntityForName:TENEnityName inManagedObjectContext:self.managedObjectContext];
+    [user setValue:firstName forKey:kTENFirstName];
+    [user setValue:lastName forKey:kTENLastName];
+    
+    NSError *error = nil;
+    if (![self.managedObjectContext save:&error]) {
+        NSLog(@"%@", [error localizedDescription]);
+        
+        abort();
+    }
+}
+
 
 #pragma mark -
 #pragma mark Core Data stack
