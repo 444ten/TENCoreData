@@ -7,14 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		76F845171B7B189600E79C5C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 76F845161B7B189600E79C5C /* main.m */; };
-		76F8451A1B7B189600E79C5C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 76F845191B7B189600E79C5C /* AppDelegate.m */; };
-		76F8451D1B7B189600E79C5C /* TENCoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 76F8451B1B7B189600E79C5C /* TENCoreData.xcdatamodeld */; };
-		76F845201B7B189600E79C5C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 76F8451F1B7B189600E79C5C /* ViewController.m */; };
-		76F845231B7B189600E79C5C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76F845211B7B189600E79C5C /* Main.storyboard */; };
-		76F845251B7B189600E79C5C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 76F845241B7B189600E79C5C /* Images.xcassets */; };
-		76F845281B7B189600E79C5C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76F845261B7B189600E79C5C /* LaunchScreen.xib */; };
 		76F845341B7B189600E79C5C /* TENCoreDataTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 76F845331B7B189600E79C5C /* TENCoreDataTests.m */; };
+		76F845451B7B1ABC00E79C5C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 76F845441B7B1ABC00E79C5C /* AppDelegate.m */; };
+		76F8454E1B7B1B7300E79C5C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76F845471B7B1B7300E79C5C /* LaunchScreen.xib */; };
+		76F8454F1B7B1B7300E79C5C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 76F845491B7B1B7300E79C5C /* Images.xcassets */; };
+		76F845511B7B1B7300E79C5C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 76F8454B1B7B1B7300E79C5C /* main.m */; };
+		76F845521B7B1B7300E79C5C /* TENCoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 76F8454C1B7B1B7300E79C5C /* TENCoreData.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,19 +27,16 @@
 
 /* Begin PBXFileReference section */
 		76F845111B7B189600E79C5C /* TENCoreData.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TENCoreData.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		76F845151B7B189600E79C5C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		76F845161B7B189600E79C5C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		76F845181B7B189600E79C5C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		76F845191B7B189600E79C5C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		76F8451C1B7B189600E79C5C /* TENCoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TENCoreData.xcdatamodel; sourceTree = "<group>"; };
-		76F8451E1B7B189600E79C5C /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		76F8451F1B7B189600E79C5C /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		76F845221B7B189600E79C5C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		76F845241B7B189600E79C5C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		76F845271B7B189600E79C5C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		76F8452D1B7B189600E79C5C /* TENCoreDataTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TENCoreDataTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		76F845321B7B189600E79C5C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		76F845331B7B189600E79C5C /* TENCoreDataTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TENCoreDataTests.m; sourceTree = "<group>"; };
+		76F845431B7B1ABC00E79C5C /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		76F845441B7B1ABC00E79C5C /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		76F845481B7B1B7300E79C5C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		76F845491B7B1B7300E79C5C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		76F8454A1B7B1B7300E79C5C /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		76F8454B1B7B1B7300E79C5C /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		76F8454D1B7B1B7300E79C5C /* TENCoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TENCoreData.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +60,8 @@
 		76F845081B7B189600E79C5C = {
 			isa = PBXGroup;
 			children = (
+				76F8453E1B7B1A0500E79C5C /* Source */,
+				76F8453D1B7B19FD00E79C5C /* Resources */,
 				76F845131B7B189600E79C5C /* TENCoreData */,
 				76F845301B7B189600E79C5C /* TENCoreDataTests */,
 				76F845121B7B189600E79C5C /* Products */,
@@ -83,26 +80,8 @@
 		76F845131B7B189600E79C5C /* TENCoreData */ = {
 			isa = PBXGroup;
 			children = (
-				76F845181B7B189600E79C5C /* AppDelegate.h */,
-				76F845191B7B189600E79C5C /* AppDelegate.m */,
-				76F8451E1B7B189600E79C5C /* ViewController.h */,
-				76F8451F1B7B189600E79C5C /* ViewController.m */,
-				76F845211B7B189600E79C5C /* Main.storyboard */,
-				76F845241B7B189600E79C5C /* Images.xcassets */,
-				76F845261B7B189600E79C5C /* LaunchScreen.xib */,
-				76F8451B1B7B189600E79C5C /* TENCoreData.xcdatamodeld */,
-				76F845141B7B189600E79C5C /* Supporting Files */,
 			);
 			path = TENCoreData;
-			sourceTree = "<group>";
-		};
-		76F845141B7B189600E79C5C /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				76F845151B7B189600E79C5C /* Info.plist */,
-				76F845161B7B189600E79C5C /* main.m */,
-			);
-			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		76F845301B7B189600E79C5C /* TENCoreDataTests */ = {
@@ -120,6 +99,67 @@
 				76F845321B7B189600E79C5C /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		76F8453D1B7B19FD00E79C5C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		76F8453E1B7B1A0500E79C5C /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				76F8453F1B7B1A7B00E79C5C /* GUI */,
+				76F845461B7B1B7300E79C5C /* SupportingFiles */,
+				76F845401B7B1A8300E79C5C /* Libraries */,
+				76F845431B7B1ABC00E79C5C /* AppDelegate.h */,
+				76F845441B7B1ABC00E79C5C /* AppDelegate.m */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		76F8453F1B7B1A7B00E79C5C /* GUI */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = GUI;
+			sourceTree = "<group>";
+		};
+		76F845401B7B1A8300E79C5C /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				76F845411B7B1A8300E79C5C /* Categories */,
+				76F845421B7B1A8300E79C5C /* Classes */,
+			);
+			path = Libraries;
+			sourceTree = "<group>";
+		};
+		76F845411B7B1A8300E79C5C /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		76F845421B7B1A8300E79C5C /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		76F845461B7B1B7300E79C5C /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				76F845471B7B1B7300E79C5C /* LaunchScreen.xib */,
+				76F845491B7B1B7300E79C5C /* Images.xcassets */,
+				76F8454A1B7B1B7300E79C5C /* Info.plist */,
+				76F8454B1B7B1B7300E79C5C /* main.m */,
+				76F8454C1B7B1B7300E79C5C /* TENCoreData.xcdatamodeld */,
+			);
+			path = SupportingFiles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -202,9 +242,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				76F845231B7B189600E79C5C /* Main.storyboard in Resources */,
-				76F845281B7B189600E79C5C /* LaunchScreen.xib in Resources */,
-				76F845251B7B189600E79C5C /* Images.xcassets in Resources */,
+				76F8454E1B7B1B7300E79C5C /* LaunchScreen.xib in Resources */,
+				76F8454F1B7B1B7300E79C5C /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -222,10 +261,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				76F8451A1B7B189600E79C5C /* AppDelegate.m in Sources */,
-				76F8451D1B7B189600E79C5C /* TENCoreData.xcdatamodeld in Sources */,
-				76F845201B7B189600E79C5C /* ViewController.m in Sources */,
-				76F845171B7B189600E79C5C /* main.m in Sources */,
+				76F845511B7B1B7300E79C5C /* main.m in Sources */,
+				76F845521B7B1B7300E79C5C /* TENCoreData.xcdatamodeld in Sources */,
+				76F845451B7B1ABC00E79C5C /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -248,18 +286,10 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		76F845211B7B189600E79C5C /* Main.storyboard */ = {
+		76F845471B7B1B7300E79C5C /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				76F845221B7B189600E79C5C /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		76F845261B7B189600E79C5C /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				76F845271B7B189600E79C5C /* Base */,
+				76F845481B7B1B7300E79C5C /* Base */,
 			);
 			name = LaunchScreen.xib;
 			sourceTree = "<group>";
@@ -353,7 +383,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = TENCoreData/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Source/SupportingFiles/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -363,7 +394,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = TENCoreData/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Source/SupportingFiles/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -422,6 +454,7 @@
 				76F845391B7B189600E79C5C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		76F8453A1B7B189600E79C5C /* Build configuration list for PBXNativeTarget "TENCoreDataTests" */ = {
 			isa = XCConfigurationList;
@@ -430,16 +463,17 @@
 				76F8453C1B7B189600E79C5C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		76F8451B1B7B189600E79C5C /* TENCoreData.xcdatamodeld */ = {
+		76F8454C1B7B1B7300E79C5C /* TENCoreData.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				76F8451C1B7B189600E79C5C /* TENCoreData.xcdatamodel */,
+				76F8454D1B7B1B7300E79C5C /* TENCoreData.xcdatamodel */,
 			);
-			currentVersion = 76F8451C1B7B189600E79C5C /* TENCoreData.xcdatamodel */;
+			currentVersion = 76F8454D1B7B1B7300E79C5C /* TENCoreData.xcdatamodel */;
 			path = TENCoreData.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
