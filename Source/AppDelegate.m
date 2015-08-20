@@ -55,9 +55,18 @@ static NSString * const TENEnityCoreDataObject = @"TENCoreDataObject";
     
 //    [self printObjectsFromArray:[self allObjects]];
     
-    [self printObjectsFromArray:[self objectsByEntityName:TENEnityCar]];
+//    [self printObjectsFromArray:[self objectsByEntityName:TENEnityCar]];
     
+  
+    NSFetchRequest *request = [NSFetchRequest new];
+    NSEntityDescription *description = [NSEntityDescription entityForName:TENEnityUser inManagedObjectContext:self.managedObjectContext];
+    request.entity = description;
     
+    NSArray *result = [self.managedObjectContext executeFetchRequest:request error:nil];
+    
+    for (TENUser *user in result) {
+        [self printObjectsFromArray:user.firstNameS];
+    }
     
     return YES;
 }
