@@ -10,9 +10,10 @@
         <attribute name="lastName" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="car" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="TENCar" inverseName="user" inverseEntity="TENCar" syncable="YES"/>
     </entity>
+    <fetchRequest name="carModelJeep" entity="TENCar" predicateString="model == &quot;Jeep&quot;"/>
     <elements>
-        <element name="TENUser" positionX="18" positionY="164" width="128" height="88"/>
         <element name="TENCar" positionX="313" positionY="179" width="128" height="73"/>
         <element name="TENCoreDataObject" positionX="162" positionY="29" width="128" height="43"/>
+        <element name="TENUser" positionX="18" positionY="164" width="128" height="88"/>
     </elements>
 </model>

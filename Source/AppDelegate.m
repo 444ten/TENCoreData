@@ -125,17 +125,21 @@ static NSString * const TENEnityCoreDataObject = @"TENCoreDataObject";
 }
 
 - (NSArray *)objectsByEntityName:(NSString *)entityName {
-    NSEntityDescription *description = [NSEntityDescription entityForName:entityName
-                                                   inManagedObjectContext:self.managedObjectContext];
-    NSFetchRequest *request = [NSFetchRequest new];
-    request.entity = description;
-    request.relationshipKeyPathsForPrefetching = @[@"user"];
-
-    NSSortDescriptor *modelDescriptor = [[NSSortDescriptor alloc] initWithKey:@"model" ascending:NO];
-    request.sortDescriptors = @[modelDescriptor];
+//    NSEntityDescription *description = [NSEntityDescription entityForName:entityName
+//                                                   inManagedObjectContext:self.managedObjectContext];
+//    NSFetchRequest *request = [NSFetchRequest new];
+    NSFetchRequest *request = [self.managedObjectModel fetchRequestTemplateForName:@"carModelJeep"];
+    
+//    request.entity = description;
+//    request.relationshipKeyPathsForPrefetching = @[@"user"];
+//
+//    NSSortDescriptor *modelDescriptor = [[NSSortDescriptor alloc] initWithKey:@"model" ascending:NO];
+//    request.sortDescriptors = @[modelDescriptor];
+    
+//    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"user.firstName = %@", @"Sara"]; // courses.@count
+//    request.predicate = predicate;
     
     return [self.managedObjectContext executeFetchRequest:request error:nil];
-
 }
 
 - (void)printObjectsFromArray:(NSArray *)array {
