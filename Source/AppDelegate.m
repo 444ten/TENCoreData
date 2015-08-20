@@ -13,7 +13,7 @@
 
 #import "TENFriendsViewController.h"
 #import "TENDataManager.h"
-
+#import "TENCoreDataViewController.h"
 
 @interface AppDelegate ()
 
@@ -25,24 +25,13 @@
     UIWindow *window = [UIWindow window];
     self.window = window;
     
-    TENFriendsViewController *controller = [TENFriendsViewController controller];
-    window.rootViewController = controller;
+    TENCoreDataViewController *controller = [TENCoreDataViewController controller];
+    
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:controller];
+
+    window.rootViewController = navigationController;
     
     [window makeKeyAndVisible];
-    
-//    [self deleteAllObjects];
-
-//    [self addUsers];
-    
-//    [self deleteAllObjects];
-   
-//    [self deleteFirstUser];
-    
-//    [self printObjectsFromArray:[self allObjects]];
-    
-//    [self printObjectsFromArray:[self objectsByEntityName:TENEnityCar]];
-    
-  
     
     return YES;
 }

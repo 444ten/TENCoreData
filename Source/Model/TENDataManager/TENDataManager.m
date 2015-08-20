@@ -11,21 +11,8 @@
 #import "TENCar.h"
 #import "TENUser.h"
 
-static NSString * const TENEnityUser = @"TENUser";
-static NSString * const TENEnityCar = @"TENCar";
-static NSString * const TENEnityCoreDataObject = @"TENCoreDataObject";
-
 @interface TENDataManager ()
 
-- (void)addUserWithFirstName:(NSString *)firstName lastName:(NSString *)lastName carModel:(NSString *)carModel;
-- (void)addUsers;
-
-- (NSArray *)allObjects;
-- (NSArray *)objectsByEntityName:(NSString *)entityName;
-- (void)printObjectsFromArray:(NSArray *)array;
-- (void)deleteAllObjects;
-- (void)deleteFirstCar;
-- (void)deleteFirstUser;
 
 @end
 
@@ -43,6 +30,18 @@ static NSString * const TENEnityCoreDataObject = @"TENCoreDataObject";
     });
     
     return manager;
+}
+
+#pragma mark -
+#pragma mark Initializations and Deallocations
+
+- (instancetype)init {
+    self = [super init];
+    if (self) {
+
+    }
+    
+    return self;
 }
 
 #pragma mark -
@@ -87,12 +86,12 @@ static NSString * const TENEnityCoreDataObject = @"TENCoreDataObject";
 }
 
 - (NSArray *)objectsByEntityName:(NSString *)entityName {
-    //    NSEntityDescription *description = [NSEntityDescription entityForName:entityName
-    //                                                   inManagedObjectContext:self.managedObjectContext];
-    //    NSFetchRequest *request = [NSFetchRequest new];
-    NSFetchRequest *request = [self.managedObjectModel fetchRequestTemplateForName:@"carModelJeep"];
+        NSEntityDescription *description = [NSEntityDescription entityForName:entityName
+                                                       inManagedObjectContext:self.managedObjectContext];
+        NSFetchRequest *request = [NSFetchRequest new];
+//    NSFetchRequest *request = [self.managedObjectModel fetchRequestTemplateForName:@"carModelJeep"];
     
-    //    request.entity = description;
+        request.entity = description;
     //    request.relationshipKeyPathsForPrefetching = @[@"user"];
     //
     //    NSSortDescriptor *modelDescriptor = [[NSSortDescriptor alloc] initWithKey:@"model" ascending:NO];

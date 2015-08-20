@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		76021A341B85D714007107DA /* TENDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 76021A331B85D714007107DA /* TENDataManager.m */; };
+		76021A391B85EE29007107DA /* TENCoreDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 76021A371B85EE29007107DA /* TENCoreDataViewController.m */; };
+		76021A3A1B85EE29007107DA /* TENCoreDataViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76021A381B85EE29007107DA /* TENCoreDataViewController.xib */; };
 		76F845341B7B189600E79C5C /* TENCoreDataTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 76F845331B7B189600E79C5C /* TENCoreDataTests.m */; };
 		76F845451B7B1ABC00E79C5C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 76F845441B7B1ABC00E79C5C /* AppDelegate.m */; };
 		76F8454E1B7B1B7300E79C5C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76F845471B7B1B7300E79C5C /* LaunchScreen.xib */; };
@@ -37,6 +39,9 @@
 /* Begin PBXFileReference section */
 		76021A321B85D714007107DA /* TENDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TENDataManager.h; sourceTree = "<group>"; };
 		76021A331B85D714007107DA /* TENDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TENDataManager.m; sourceTree = "<group>"; };
+		76021A361B85EE29007107DA /* TENCoreDataViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TENCoreDataViewController.h; sourceTree = "<group>"; };
+		76021A371B85EE29007107DA /* TENCoreDataViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TENCoreDataViewController.m; sourceTree = "<group>"; };
+		76021A381B85EE29007107DA /* TENCoreDataViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TENCoreDataViewController.xib; sourceTree = "<group>"; };
 		76F845111B7B189600E79C5C /* TENCoreData.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TENCoreData.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		76F8452D1B7B189600E79C5C /* TENCoreDataTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TENCoreDataTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		76F845321B7B189600E79C5C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -90,6 +95,16 @@
 				76021A331B85D714007107DA /* TENDataManager.m */,
 			);
 			path = TENDataManager;
+			sourceTree = "<group>";
+		};
+		76021A351B85EE03007107DA /* TENCoreDataViewController */ = {
+			isa = PBXGroup;
+			children = (
+				76021A361B85EE29007107DA /* TENCoreDataViewController.h */,
+				76021A371B85EE29007107DA /* TENCoreDataViewController.m */,
+				76021A381B85EE29007107DA /* TENCoreDataViewController.xib */,
+			);
+			path = TENCoreDataViewController;
 			sourceTree = "<group>";
 		};
 		76F845081B7B189600E79C5C = {
@@ -159,6 +174,7 @@
 		76F8453F1B7B1A7B00E79C5C /* GUI */ = {
 			isa = PBXGroup;
 			children = (
+				76021A351B85EE03007107DA /* TENCoreDataViewController */,
 				76F845571B7B214E00E79C5C /* TENFriendsViewController */,
 			);
 			path = GUI;
@@ -344,6 +360,7 @@
 				76F8454E1B7B1B7300E79C5C /* LaunchScreen.xib in Resources */,
 				76F8454F1B7B1B7300E79C5C /* Images.xcassets in Resources */,
 				76F845601B7B219300E79C5C /* TENFriendsViewController.xib in Resources */,
+				76021A3A1B85EE29007107DA /* TENCoreDataViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -364,6 +381,7 @@
 				76021A341B85D714007107DA /* TENDataManager.m in Sources */,
 				76F8457D1B7B758100E79C5C /* TENCar.m in Sources */,
 				76F845831B7B758200E79C5C /* TENCoreDataObject.m in Sources */,
+				76021A391B85EE29007107DA /* TENCoreDataViewController.m in Sources */,
 				76F845511B7B1B7300E79C5C /* main.m in Sources */,
 				76F845521B7B1B7300E79C5C /* TENCoreData.xcdatamodeld in Sources */,
 				76F845641B7B21D400E79C5C /* UIViewController+TENExtensions.m in Sources */,
