@@ -14,6 +14,8 @@
 @interface TENCoreDataViewController ()
 @property (nonatomic, strong)   IBOutlet UITableView    *tableView;
 
+- (void)insertNewObject:(id)sender;
+
 @end
 
 @implementation TENCoreDataViewController
@@ -37,6 +39,13 @@
                                                                                target:self
                                                                                action:@selector(insertNewObject:)];
     self.navigationItem.rightBarButtonItem = addButton;
+    
+}
+
+-(void)setEditing:(BOOL)editing animated:(BOOL)animated {
+    [super setEditing:editing animated:animated];
+    
+    [self.tableView setEditing:editing animated:animated];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -57,7 +66,7 @@
     
     fetchRequest.fetchBatchSize = 20;
     
-    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"firstName" ascending:NO];
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"firstName" ascending:YES];
     fetchRequest.sortDescriptors = @[sortDescriptor];
     
     NSFetchedResultsController *aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest
@@ -89,22 +98,21 @@
 #pragma mark Private
 
 - (void)insertNewObject:(id)sender {
-//    NSManagedObjectContext *context = [self.fetchedResultsController managedObjectContext];
-//    NSEntityDescription *entity = [[self.fetchedResultsController fetchRequest] entity];
-//    NSManagedObject *newManagedObject = [NSEntityDescription insertNewObjectForEntityForName:[entity name] inManagedObjectContext:context];
-//    
-//    // If appropriate, configure the new managed object.
-//    // Normally you should use accessor methods, but using KVC here avoids the need to add a custom class to the template.
-//    [newManagedObject setValue:[NSDate date] forKey:@"timeStamp"];
-//    
-//    // Save the context.
-//    NSError *error = nil;
-//    if (![context save:&error]) {
-//        // Replace this implementation with code to handle the error appropriately.
-//        // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-//        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-//        abort();
-//    }
+    NSFetchedResultsController *controller = self.fetchedResultsController;
+    
+    NSManagedObjectContext *context = controller.managedObjectContext;
+    NSString *entityName = controller.fetchRequest.entity.name;
+    
+    TENUser *user = [NSEntityDescription insertNewObjectForEntityForName:entityName
+                                                  inManagedObjectContext:context];
+    
+    user.firstName = @"Mama";
+    
+    NSError *error = nil;
+    if (![context save:&error]) {
+        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+        abort();
+    }
 }
 
 #pragma mark - UITableViewDataSource
@@ -124,7 +132,7 @@
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:identifier];
     }
     
     [self configureCell:cell atIndexPath:indexPath];
@@ -133,19 +141,19 @@
 }
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
     return YES;
 }
 
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+- (void)    tableView:(UITableView *)tableView
+   commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
+    forRowAtIndexPath:(NSIndexPath *)indexPath
+{
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         NSManagedObjectContext *context = [self.fetchedResultsController managedObjectContext];
         [context deleteObject:[self.fetchedResultsController objectAtIndexPath:indexPath]];
         
         NSError *error = nil;
         if (![context save:&error]) {
-            // Replace this implementation with code to handle the error appropriately.
-            // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
             NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
             abort();
         }
@@ -157,15 +165,17 @@
     cell.textLabel.text = user.firstName;
 }
 
-#pragma mark - Fetched results controller
+#pragma mark -
+#pragma mark NSFetchedResultsControllerDelegate
 
-- (void)controllerWillChangeContent:(NSFetchedResultsController *)controller
-{
+- (void)controllerWillChangeContent:(NSFetchedResultsController *)controller {
     [self.tableView beginUpdates];
 }
 
-- (void)controller:(NSFetchedResultsController *)controller didChangeSection:(id <NSFetchedResultsSectionInfo>)sectionInfo
-           atIndex:(NSUInteger)sectionIndex forChangeType:(NSFetchedResultsChangeType)type
+- (void)controller:(NSFetchedResultsController *)controller
+  didChangeSection:(id <NSFetchedResultsSectionInfo>)sectionInfo
+           atIndex:(NSUInteger)sectionIndex
+     forChangeType:(NSFetchedResultsChangeType)type
 {
     switch(type) {
         case NSFetchedResultsChangeInsert:
@@ -181,8 +191,10 @@
     }
 }
 
-- (void)controller:(NSFetchedResultsController *)controller didChangeObject:(id)anObject
-       atIndexPath:(NSIndexPath *)indexPath forChangeType:(NSFetchedResultsChangeType)type
+- (void)controller:(NSFetchedResultsController *)controller
+   didChangeObject:(id)anObject
+       atIndexPath:(NSIndexPath *)indexPath
+     forChangeType:(NSFetchedResultsChangeType)type
       newIndexPath:(NSIndexPath *)newIndexPath
 {
     UITableView *tableView = self.tableView;
@@ -207,19 +219,8 @@
     }
 }
 
-- (void)controllerDidChangeContent:(NSFetchedResultsController *)controller
-{
+- (void)controllerDidChangeContent:(NSFetchedResultsController *)controller {
     [self.tableView endUpdates];
 }
-
-/*
- // Implementing the above methods to update the table view in response to individual changes may have performance implications if a large number of changes are made simultaneously. If this proves to be an issue, you can instead just implement controllerDidChangeContent: which notifies the delegate that all section and object changes have been processed.
- 
- - (void)controllerDidChangeContent:(NSFetchedResultsController *)controller
- {
- // In the simplest, most efficient, case, reload the table view.
- [self.tableView reloadData];
- }
- */
 
 @end
