@@ -27,7 +27,7 @@ static NSString * const TENEnityCoreDataObject = @"TENCoreDataObject";
 
 - (NSArray *)allObjects;
 - (NSArray *)objectsByEntityName:(NSString *)entityName;
-- (void)printAllObjects;
+- (void)printObjectsFromArray:(NSArray *)array;
 - (void)deleteAllObjects;
 - (void)deleteFirstCar;
 - (void)deleteFirstUser;
@@ -51,12 +51,12 @@ static NSString * const TENEnityCoreDataObject = @"TENCoreDataObject";
     
 //    [self deleteAllObjects];
    
-    [self deleteFirstUser];
+//    [self deleteFirstUser];
     
-    [self printAllObjects];
+//    [self printObjectsFromArray:[self allObjects]];
     
+    [self printObjectsFromArray:[self objectsByEntityName:TENEnityCar]];
     
-//    [self printAllObjects];
     
     
     return YES;
@@ -116,6 +116,10 @@ static NSString * const TENEnityCoreDataObject = @"TENCoreDataObject";
     
     NSFetchRequest *request = [NSFetchRequest new];
     request.entity = entityDescription;
+    request.fetchBatchSize = 2;
+//    request.fetchOffset
+//    request.fetchLimit
+//    request.relationshipKeyPathsForPrefetching = @[...] - сразу загрузить из базы
     
     return [self.managedObjectContext executeFetchRequest:request error:nil];
 }
@@ -125,15 +129,17 @@ static NSString * const TENEnityCoreDataObject = @"TENCoreDataObject";
                                                    inManagedObjectContext:self.managedObjectContext];
     NSFetchRequest *request = [NSFetchRequest new];
     request.entity = description;
+    request.relationshipKeyPathsForPrefetching = @[@"user"];
+
+    NSSortDescriptor *modelDescriptor = [[NSSortDescriptor alloc] initWithKey:@"model" ascending:NO];
+    request.sortDescriptors = @[modelDescriptor];
     
     return [self.managedObjectContext executeFetchRequest:request error:nil];
 
 }
 
-- (void)printAllObjects {
-    NSArray *objects = [self allObjects];
- 
-    for (id object in objects) {
+- (void)printObjectsFromArray:(NSArray *)array {
+    for (id object in array) {
         if ([object isMemberOfClass:[TENUser class]]) {
             TENUser *user = (TENUser *)object;
             NSLog(@"user: %@ - %@, car: %@", user.firstName, user.lastName, user.car.model);
