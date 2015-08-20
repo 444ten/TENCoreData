@@ -26,8 +26,11 @@ static NSString * const TENEnityCoreDataObject = @"TENCoreDataObject";
 - (void)addUsers;
 
 - (NSArray *)allObjects;
+- (NSArray *)objectsByEntityName:(NSString *)entityName;
 - (void)printAllObjects;
 - (void)deleteAllObjects;
+- (void)deleteFirstCar;
+- (void)deleteFirstUser;
 
 @end
 
@@ -42,13 +45,19 @@ static NSString * const TENEnityCoreDataObject = @"TENCoreDataObject";
     
     [window makeKeyAndVisible];
     
-    [self deleteAllObjects];
+//    [self deleteAllObjects];
 
-    [self addUsers];
+//    [self addUsers];
     
 //    [self deleteAllObjects];
+   
+    [self deleteFirstUser];
     
     [self printAllObjects];
+    
+    
+//    [self printAllObjects];
+    
     
     return YES;
 }
@@ -111,6 +120,16 @@ static NSString * const TENEnityCoreDataObject = @"TENCoreDataObject";
     return [self.managedObjectContext executeFetchRequest:request error:nil];
 }
 
+- (NSArray *)objectsByEntityName:(NSString *)entityName {
+    NSEntityDescription *description = [NSEntityDescription entityForName:entityName
+                                                   inManagedObjectContext:self.managedObjectContext];
+    NSFetchRequest *request = [NSFetchRequest new];
+    request.entity = description;
+    
+    return [self.managedObjectContext executeFetchRequest:request error:nil];
+
+}
+
 - (void)printAllObjects {
     NSArray *objects = [self allObjects];
  
@@ -133,6 +152,21 @@ static NSString * const TENEnityCoreDataObject = @"TENCoreDataObject";
     }
 
     [self.managedObjectContext save:nil];
+}
+
+- (void)deleteFirstCar {
+    TENCar *car = [[self objectsByEntityName:TENEnityCar] firstObject];
+    
+    [self.managedObjectContext deleteObject:car];
+    [self.managedObjectContext save:nil];
+}
+
+- (void)deleteFirstUser {
+    TENUser *user = [[self objectsByEntityName:TENEnityUser] firstObject];
+    
+    [self.managedObjectContext deleteObject:user];
+    [self.managedObjectContext save:nil];
+    
 }
 
 #pragma mark -
