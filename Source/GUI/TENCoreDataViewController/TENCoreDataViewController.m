@@ -69,6 +69,10 @@
     NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"firstName" ascending:YES];
     fetchRequest.sortDescriptors = @[sortDescriptor];
     
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"firstName == %@", @"Mama"];
+    
+//    fetchRequest.predicate = predicate;
+    
     NSFetchedResultsController *aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest
                                                                                                 managedObjectContext:self.managedObjectContext
                                                                                                   sectionNameKeyPath:nil
@@ -106,7 +110,7 @@
     TENUser *user = [NSEntityDescription insertNewObjectForEntityForName:entityName
                                                   inManagedObjectContext:context];
     
-    user.firstName = @"Mama";
+    user.firstName = @"Papa";
     
     NSError *error = nil;
     if (![context save:&error]) {

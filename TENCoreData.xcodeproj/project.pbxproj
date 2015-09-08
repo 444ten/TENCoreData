@@ -24,6 +24,11 @@
 		76F8457D1B7B758100E79C5C /* TENCar.m in Sources */ = {isa = PBXBuildFile; fileRef = 76F8457C1B7B758100E79C5C /* TENCar.m */; };
 		76F845801B7B758200E79C5C /* TENUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 76F8457F1B7B758200E79C5C /* TENUser.m */; };
 		76F845831B7B758200E79C5C /* TENCoreDataObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 76F845821B7B758200E79C5C /* TENCoreDataObject.m */; };
+		76FB90AF1B9EFEEB008AEC4D /* TENFirstTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 76FB90AD1B9EFEEB008AEC4D /* TENFirstTableViewController.m */; };
+		76FB90B01B9EFEEB008AEC4D /* TENFirstTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76FB90AE1B9EFEEB008AEC4D /* TENFirstTableViewController.xib */; };
+		76FB90B41B9F005F008AEC4D /* TENSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 76FB90B21B9F005F008AEC4D /* TENSecondViewController.m */; };
+		76FB90B51B9F005F008AEC4D /* TENSecondViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76FB90B31B9F005F008AEC4D /* TENSecondViewController.xib */; };
+		76FB90B81B9F0232008AEC4D /* TENModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 76FB90B71B9F0232008AEC4D /* TENModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +73,14 @@
 		76F8457F1B7B758200E79C5C /* TENUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TENUser.m; sourceTree = "<group>"; };
 		76F845811B7B758200E79C5C /* TENCoreDataObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TENCoreDataObject.h; sourceTree = "<group>"; };
 		76F845821B7B758200E79C5C /* TENCoreDataObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TENCoreDataObject.m; sourceTree = "<group>"; };
+		76FB90AC1B9EFEEB008AEC4D /* TENFirstTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TENFirstTableViewController.h; sourceTree = "<group>"; };
+		76FB90AD1B9EFEEB008AEC4D /* TENFirstTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TENFirstTableViewController.m; sourceTree = "<group>"; };
+		76FB90AE1B9EFEEB008AEC4D /* TENFirstTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TENFirstTableViewController.xib; sourceTree = "<group>"; };
+		76FB90B11B9F005F008AEC4D /* TENSecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TENSecondViewController.h; sourceTree = "<group>"; };
+		76FB90B21B9F005F008AEC4D /* TENSecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TENSecondViewController.m; sourceTree = "<group>"; };
+		76FB90B31B9F005F008AEC4D /* TENSecondViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TENSecondViewController.xib; sourceTree = "<group>"; };
+		76FB90B61B9F0232008AEC4D /* TENModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TENModel.h; sourceTree = "<group>"; };
+		76FB90B71B9F0232008AEC4D /* TENModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TENModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,6 +187,7 @@
 		76F8453F1B7B1A7B00E79C5C /* GUI */ = {
 			isa = PBXGroup;
 			children = (
+				76FB90AB1B9EFEBD008AEC4D /* TENPushPopViewController */,
 				76021A351B85EE03007107DA /* TENCoreDataViewController */,
 				76F845571B7B214E00E79C5C /* TENFriendsViewController */,
 			);
@@ -277,6 +291,21 @@
 			path = TENCoreDataModel;
 			sourceTree = "<group>";
 		};
+		76FB90AB1B9EFEBD008AEC4D /* TENPushPopViewController */ = {
+			isa = PBXGroup;
+			children = (
+				76FB90AC1B9EFEEB008AEC4D /* TENFirstTableViewController.h */,
+				76FB90AD1B9EFEEB008AEC4D /* TENFirstTableViewController.m */,
+				76FB90AE1B9EFEEB008AEC4D /* TENFirstTableViewController.xib */,
+				76FB90B11B9F005F008AEC4D /* TENSecondViewController.h */,
+				76FB90B21B9F005F008AEC4D /* TENSecondViewController.m */,
+				76FB90B31B9F005F008AEC4D /* TENSecondViewController.xib */,
+				76FB90B61B9F0232008AEC4D /* TENModel.h */,
+				76FB90B71B9F0232008AEC4D /* TENModel.m */,
+			);
+			path = TENPushPopViewController;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -357,6 +386,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				76FB90B51B9F005F008AEC4D /* TENSecondViewController.xib in Resources */,
+				76FB90B01B9EFEEB008AEC4D /* TENFirstTableViewController.xib in Resources */,
 				76F8454E1B7B1B7300E79C5C /* LaunchScreen.xib in Resources */,
 				76F8454F1B7B1B7300E79C5C /* Images.xcassets in Resources */,
 				76F845601B7B219300E79C5C /* TENFriendsViewController.xib in Resources */,
@@ -382,6 +413,7 @@
 				76F8457D1B7B758100E79C5C /* TENCar.m in Sources */,
 				76F845831B7B758200E79C5C /* TENCoreDataObject.m in Sources */,
 				76021A391B85EE29007107DA /* TENCoreDataViewController.m in Sources */,
+				76FB90B41B9F005F008AEC4D /* TENSecondViewController.m in Sources */,
 				76F845511B7B1B7300E79C5C /* main.m in Sources */,
 				76F845521B7B1B7300E79C5C /* TENCoreData.xcdatamodeld in Sources */,
 				76F845641B7B21D400E79C5C /* UIViewController+TENExtensions.m in Sources */,
@@ -389,6 +421,8 @@
 				76F8455B1B7B217900E79C5C /* TENViewController.m in Sources */,
 				76F845451B7B1ABC00E79C5C /* AppDelegate.m in Sources */,
 				76F8455F1B7B219300E79C5C /* TENFriendsViewController.m in Sources */,
+				76FB90AF1B9EFEEB008AEC4D /* TENFirstTableViewController.m in Sources */,
+				76FB90B81B9F0232008AEC4D /* TENModel.m in Sources */,
 				76F845561B7B1D9B00E79C5C /* UIWindow+TENExtensions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

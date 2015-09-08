@@ -15,6 +15,9 @@
 #import "TENDataManager.h"
 #import "TENCoreDataViewController.h"
 
+#import "TENFirstTableViewController.h"
+#import "TENModel.h"
+
 @interface AppDelegate ()
 
 @end
@@ -25,7 +28,12 @@
     UIWindow *window = [UIWindow window];
     self.window = window;
     
-    TENCoreDataViewController *controller = [TENCoreDataViewController controller];
+//    TENCoreDataViewController *controller = [TENCoreDataViewController controller];
+
+    TENModel *model = [TENModel new];
+    
+    TENFirstTableViewController *controller = [TENFirstTableViewController controller];
+    controller.model = model;
     
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:controller];
 
